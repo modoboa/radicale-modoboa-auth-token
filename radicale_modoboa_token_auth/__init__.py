@@ -18,16 +18,18 @@ class Auth(DovecotAuth):
     [auth]
     type = radicale_modoboa_token_auth
 
-    check_token_url = https://my.modoboa.com/api/v1/user-calendars/check_token/
-    token = MYTOKENHERE
+    radicale_modoboa_token_auth_check_url = https://my.modoboa.com/api/v1/user-calendars/check_token/
+    radicale_modoboa_token_auth_token = MYTOKENHERE
 
     """
 
     def get_external_login(self, environ):
         self._auth_is_ok = False
         try:
-            check_token_url = self.configuration.get('auth', 'check_token_url')
-            api_token = self.configuration.get('auth', 'token')
+            check_token_url = self.configuration.get(
+                'auth', 'radicale_modoboa_token_auth_check_url')
+            api_token = self.configuration.get(
+                'auth', 'radicale_modoboa_token_auth_token')
         except KeyError:
             raise RuntimeError('check_token_url and token must be set')
 

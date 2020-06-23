@@ -12,11 +12,11 @@ setup(
     author_email='tonio@ngyn.org',
     license='MIT',
     packages=["radicale_modoboa_token_auth"],
-    install_requires=['radicale'],
+    install_requires=['radicale', 'requests'],
     classifiers=[
         'Development Status :: 5 - Production/Stable',
         'Operating System :: POSIX',
-        'License :: OSI Approved :: GNU General Public License v2 (GPLv2)',
+        'License :: OSI Approved :: MIT License',
         'Programming Language :: Python :: 3',
         'Programming Language :: Python :: 3.5',
         'Programming Language :: Python :: 3.6',
